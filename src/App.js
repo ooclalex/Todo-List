@@ -1,22 +1,17 @@
 import logo from './logo.svg';
+import TodoItem from './component/TodoItem';
 import './App.css';
+import TodoGeneratorContainer from './container/TodoGeneratorContainer';
 
 function App() {
+  const status = "test status";
+  const message = "test message";
+  const todoItem = {status, message};
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <TodoItem todoItem={todoItem} />
+        <TodoGeneratorContainer />
       </header>
     </div>
   );
