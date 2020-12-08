@@ -1,16 +1,11 @@
 import './App.css';
-import TodoGeneratorContainer from './container/TodoGeneratorContainer';
-import TodoItemGroupContainer from './container/TodoGroupContainer';
+import TodoList from './component/TodoList';
 
 function App() {
-  const done = false;
-  const text = "test text";
-  const todoItem = {done, text};
   return (
     <div className="App">
       <header className="App-header">
-        <TodoItemGroupContainer todoItem={todoItem} />
-        <TodoGeneratorContainer />
+        <TodoList />
       </header>
     </div>
   );
