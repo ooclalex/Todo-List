@@ -4,7 +4,7 @@ import TodoGenerator from "../component/TodoGenerator";
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addTodoItem: (message) => dispatch(addTodoItem(message))
+        addTodoItem: (text) => dispatch(addTodoItem(text))
     };
 }
 

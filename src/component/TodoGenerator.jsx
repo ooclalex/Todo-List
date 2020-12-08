@@ -4,20 +4,21 @@ class TodoGenerator extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: "",
+      text: "",
     };
   }
 
   handleChange = (event) => {
     this.setState({
-      message: event.target.value,
+      text: event.target.value,
     });
   };
 
   handleSubmit = (event) => {
-    this.props.addTodoItem(this.state.message);
+    console.log(this.props);
+    this.props.addTodoItem(this.state.text);
     event.preventDefault();
-    this.setState({message: ""});
+    this.setState({text: ""});
   };
 
   render() {
@@ -26,7 +27,7 @@ class TodoGenerator extends Component {
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
-            value={this.state.message}
+            value={this.state.text}
             onChange={this.handleChange}
             placeholder="input a new todo here..."
           ></input>
