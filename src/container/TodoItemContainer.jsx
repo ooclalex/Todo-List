@@ -7,7 +7,7 @@ const mapDispatchToProps = (dispatch) => {
         updateTodoItem: (id) => dispatch(updateTodoItem(id)),
         deleteTodoItem: (id) => dispatch(deleteTodoItem(id))
     };
-}
+};
 
 const TodoItemContainer = connect(null, mapDispatchToProps)(TodoItem);
 

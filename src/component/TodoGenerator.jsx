@@ -26,6 +26,9 @@ class TodoGenerator extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <input
+            style={{"width": "90%",
+          padding: "20px 10px",
+          margin: "8px 0",}}
             type="text"
             value={this.state.text}
             onChange={this.handleChange}

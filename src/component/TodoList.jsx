@@ -5,8 +5,8 @@ import TodoGroupContainer from '../container/TodoGroupContainer';
 class TodoList extends Component {
     render() {
         return (
-            <div>
-                <span>TodoList</span>
+            <div style={{"border":"solid", width: "800px"}}>
+                <h1>TodoList</h1>
                 <TodoGroupContainer />
                 <TodoGeneratorContainer />
             </div>
