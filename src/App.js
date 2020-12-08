@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import TodoItem from './component/TodoItem';
 import './App.css';
 import TodoGeneratorContainer from './container/TodoGeneratorContainer';
+import TodoGroup from './component/TodoGroup';
+import TodoItemGroupContainer from './container/TodoGroupContainer';
 
 function App() {
   const status = "test status";
@@ -10,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <TodoItem todoItem={todoItem} />
+        <TodoItemGroupContainer todoItem={todoItem} />
         <TodoGeneratorContainer />
       </header>
     </div>
