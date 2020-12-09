@@ -12,11 +12,22 @@ const todoItemList = (state = [], action) => {
         return [...state, item];
     }
     if (action.type === UPDATE_TODO_ITEM) {
+        // todo use map
+        return state.map(todo => {
+            if (todo.id === action.payload) {
+                return {
+                    ...todo,
+                    done: !todo.done
+                }
+            }
+            return todo;
+        });
         for (let i = 0; i < state.length; i++) {
             if (state[i].id === action.payload) {
-                state[i].status = !state[i].status;
+                state[i] = {...state[i], done: !state[i].done}
             }
         }
+        return [...state];
     }
     if (action.type === DELETE_TODO_ITEM) {
         return state.filter((item) => item.id !== action.payload);

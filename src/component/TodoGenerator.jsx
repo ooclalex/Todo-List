@@ -15,7 +15,6 @@ class TodoGenerator extends Component {
   };
 
   handleSubmit = (event) => {
-    console.log(this.props);
     this.props.addTodoItem(this.state.text);
     event.preventDefault();
     this.setState({text: ""});
