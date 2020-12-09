@@ -1,3 +1,4 @@
+import "./TodoItem.css";
 import React, { Component } from "react";
 import { deleteTodo, updateTodo } from "../apis/todos";
 import { Button, Row, Col } from "antd";
@@ -9,28 +10,35 @@ class TodoItem extends Component {
     });
   };
 
-  handleClick = () => {
+  handleDeleteClick = () => {
     deleteTodo(this.props.todoItem.id).then(() => {
       this.props.deleteTodoItem(this.props.todoItem.id);
     });
   };
 
+  handleAddTag = () => {
+    const tagName = prompt("Please enter the tag: ");
+    console.log(tagName);
+  }
+
   render() {
-    // todo use css file
     const { done, text } = this.props.todoItem;
     return (
       <div
-        style={{
-          width: "100%",
-          textDecoration: done ? "line-through" : "none",
-        }}
+        class="TodoItem-Item"
+        style={{ textDecoration: done ? "line-through" : "none" }}
       >
         <Row>
-          <Col span={20}>
+          <Col span={16}>
             <span onClick={this.toggleDone}>{text}</span>
           </Col>
           <Col span={4}>
-            <Button danger type="primary" onClick={this.handleClick}>
+            <Button type="primary" onClick={this.handleAddTag}>
+              + Tag
+            </Button>
+          </Col>
+          <Col span={4}>
+            <Button danger type="primary" onClick={this.handleDeleteClick}>
               X
             </Button>
           </Col>

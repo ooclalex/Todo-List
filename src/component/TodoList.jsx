@@ -9,7 +9,7 @@ class TodoList extends Component {
         return (
             <div class="div-class">
 
-            <Card title="TodoList" className="todo-list-card">
+            <Card bordered={false} title="TodoList" className="todo-list-card">
                 <TodoGroupContainer />
                 <TodoGeneratorContainer />
             </Card>
