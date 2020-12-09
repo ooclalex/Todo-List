@@ -18,7 +18,7 @@ function App() {
             </li>
           </ul>
           <Switch>
-            <Route path="/done" component={DoneListContainer}></Route>
+            <Route exact path="/done" component={DoneListContainer}></Route>
             <Route exact path="/" component={TodoList}></Route>
             <Route component={NotFound}></Route>
           </Switch>

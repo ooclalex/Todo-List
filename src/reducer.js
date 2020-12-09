@@ -1,5 +1,5 @@
 import {combineReducers} from "redux";
-import {ADD_TODO_ITEM, DELETE_TODO_ITEM, UPDATE_TODO_ITEM} from "./actionTypes"
+import {ADD_TODO_ITEM, DELETE_TODO_ITEM, INIT_TODOS, UPDATE_TODO_ITEM} from "./actionTypes"
 import {v4 as uuidv4} from "uuid";
 
 const todoItemList = (state = [], action) => {
@@ -31,6 +31,9 @@ const todoItemList = (state = [], action) => {
     }
     if (action.type === DELETE_TODO_ITEM) {
         return state.filter((item) => item.id !== action.payload);
+    }
+    if (action.type === INIT_TODOS) {
+        return action.payload;
     }
     return state;
 }
