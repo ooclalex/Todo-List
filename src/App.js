@@ -2,6 +2,7 @@ import './App.css';
 import TodoList from './component/TodoList';
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import DoneListContainer from './container/DoneListContainer';
+import NotFound from './component/NotFound';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           </ul>
           <Switch>
             <Route path="/done" component={DoneListContainer}></Route>
-            <Route path="/" component={TodoList}></Route>
+            <Route exact path="/" component={TodoList}></Route>
+            <Route component={NotFound}></Route>
           </Switch>
         </BrowserRouter>
       </header>
