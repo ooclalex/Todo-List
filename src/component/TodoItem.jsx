@@ -1,7 +1,7 @@
 import "./TodoItem.css";
 import React, { Component } from "react";
 import { deleteTodo, updateTodo, updateTodoAddTag } from "../apis/todos";
-import { Button, Row, Col } from "antd";
+import { Button, Row, Col, Tag } from "antd";
 
 class TodoItem extends Component {
   toggleDone = () => {
@@ -19,9 +19,13 @@ class TodoItem extends Component {
   handleAddTag = () => {
     const tagName = prompt("Please enter the tag: ");
     if (tagName !== "") {
-      updateTodoAddTag(this.props.todoItem.id, this.props.todoItem, tagName).then(() => {
+      updateTodoAddTag(
+        this.props.todoItem.id,
+        this.props.todoItem,
+        tagName
+      ).then(() => {
         this.props.addTag(this.props.todoItem.id, tagName);
-      })
+      });
     }
   };
 
@@ -36,7 +40,11 @@ class TodoItem extends Component {
           <Col span={12}>
             <span onClick={this.toggleDone}>{text}</span>
           </Col>
-          <Col span={6}>Tags go here</Col>
+          <Col span={6}>
+            {this.props.todoItem.tag.map((tagItem) => (
+              <Tag>{tagItem}</Tag>
+            ))}
+          </Col>
           <Col span={3}>
             <Button type="primary" onClick={this.handleAddTag}>
               + Tag
