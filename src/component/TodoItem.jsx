@@ -1,12 +1,15 @@
 import React, { Component } from "react";
+import { deleteTodo } from "../apis/todos";
 
 class TodoItem extends Component {
-  updateTodo = () => {
+  toggleDone = () => {
     this.props.updateTodoItem(this.props.todoItem.id);
   };
 
-  deleteTodo = () => {
-    this.props.deleteTodoItem(this.props.todoItem.id);
+  handleClick = () => {
+    deleteTodo(this.props.todoItem.id).then(() => {
+      this.props.deleteTodoItem(this.props.todoItem.id);
+    })
   }
 
   render() {
@@ -17,9 +20,9 @@ class TodoItem extends Component {
         color: "black",
         margin: "10px",
         textDecoration: done ? "line-through" : "none"}} 
-        onClick={this.updateTodo}>
-        <span>{text}</span>
-        <button onClick={this.deleteTodo}>X</button>
+        >
+        <span onClick={this.toggleDone}>{text}</span>
+        <button onClick={this.handleClick}>X</button>
       </div>
     );
   }

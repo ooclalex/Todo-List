@@ -8,4 +8,8 @@ const createNewTodo = (text) => {
     return api.post('/todos', {text});
 }
 
-export {getTodoList, createNewTodo};
+const deleteTodo = (id) => {
+    return api.delete(`/todos/${id}`);
+}
+
+export {getTodoList, createNewTodo, deleteTodo};
