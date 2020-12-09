@@ -1,7 +1,7 @@
 import { ADD_TODO_ITEM, DELETE_TODO_ITEM, UPDATE_TODO_ITEM, INIT_TODOS } from "./actionTypes";
 
-export const addTodoItem = (text) => (
-    {type: ADD_TODO_ITEM, payload: text}
+export const addTodoItem = (item) => (
+    {type: ADD_TODO_ITEM, payload: item}
 )
 
 export const updateTodoItem = (id) => (

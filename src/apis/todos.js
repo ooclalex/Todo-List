@@ -5,7 +5,7 @@ const getTodoList = () => {
 }
 
 const createNewTodo = (text) => {
-
+    return api.post('/todos', {text});
 }
 
 export {getTodoList, createNewTodo};

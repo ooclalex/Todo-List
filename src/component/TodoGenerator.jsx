@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { createNewTodo } from "../apis/todos";
 
 class TodoGenerator extends Component {
   constructor(props) {
@@ -15,10 +16,14 @@ class TodoGenerator extends Component {
   };
 
   handleSubmit = (event) => {
-    this.props.addTodoItem(this.state.text);
     event.preventDefault();
-    this.setState({text: ""});
+    createNewTodo(this.state.text).then((response) => {
+      this.props.addTodoItem(response.data);
+      this.setState({text: ""});
+    })
   };
+
+
 
   render() {
     return (
