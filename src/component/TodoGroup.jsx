@@ -4,12 +4,6 @@ import {getTodoList} from "../apis/todos";
 import { List } from "antd";
 
 class TodoGroup extends Component {
-
-    // addTodoItem = () => {
-  //   addNewTodo(this.state.text).then((response) => {
-  //     this.props.addTodo(this.state.text);
-  //   })
-  // }
   componentDidMount() {
     getTodoList().then((response) => {
       this.props.initTodos(response.data);
