@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TodoItemContainer from "../container/TodoItemContainer";
 import {getTodoList} from "../apis/todos";
+import { List } from "antd";
 
 class TodoGroup extends Component {
 
@@ -15,13 +16,15 @@ class TodoGroup extends Component {
     })
   }
 
+  renderListItem(todoItem) {
+    return <List.Item key={todoItem.id}><TodoItemContainer todoItem={todoItem}  /></List.Item>
+  }
+
   render() {
     const { todoItemList } = this.props;
     return (
       <div>
-        {todoItemList.map((todoItem) => (
-          <TodoItemContainer todoItem={todoItem} key={todoItem.id} />
-        ))}
+        <List dataSource={todoItemList} renderItem={this.renderListItem} />
       </div>
     );
   }

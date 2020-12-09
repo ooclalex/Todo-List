@@ -1,14 +1,18 @@
+import './TodoList.css';
 import React, { Component } from 'react';
 import TodoGeneratorContainer from '../container/TodoGeneratorContainer';
 import TodoGroupContainer from '../container/TodoGroupContainer';
+import {Card} from 'antd';
 
 class TodoList extends Component {
     render() {
         return (
-            <div style={{"border":"solid", width: "800px"}}>
-                <h1>TodoList</h1>
+            <div class="div-class">
+
+            <Card title="TodoList" className="todo-list-card">
                 <TodoGroupContainer />
                 <TodoGeneratorContainer />
+            </Card>
             </div>
         );
     }

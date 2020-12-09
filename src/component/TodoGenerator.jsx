@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { createNewTodo } from "../apis/todos";
+import { Button, Input, Row, Col } from "antd";
 
 class TodoGenerator extends Component {
   constructor(props) {
@@ -17,31 +18,31 @@ class TodoGenerator extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    createNewTodo(this.state.text).then((response) => {
-      this.props.addTodoItem(response.data);
-      this.setState({text: ""});
-    })
+    if (this.state.text !== "") {
+      createNewTodo(this.state.text).then((response) => {
+        this.props.addTodoItem(response.data);
+        this.setState({ text: "" });
+      });
+    }
   };
-
-
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            style={{"width": "90%",
-          padding: "20px 10px",
-          margin: "8px 0",}}
-            type="text"
-            value={this.state.text}
-            onChange={this.handleChange}
-            placeholder="input a new todo here..."
-          ></input>
-          <button type="submit">
-            add
-          </button>
-        </form>
+        <Row>
+          <Col span={20}>
+            <Input
+              value={this.state.text}
+              onChange={this.handleChange}
+              placeholder="input a new todo here..."
+            />
+          </Col>
+          <Col span={4}>
+            <Button type="primary" onClick={this.handleSubmit}>
+              Add
+            </Button>
+          </Col>
+        </Row>
       </div>
     );
   }
