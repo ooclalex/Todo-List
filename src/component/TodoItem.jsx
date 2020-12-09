@@ -18,7 +18,7 @@ class TodoItem extends Component {
 
   handleAddTag = () => {
     const tagName = prompt("Please enter the tag: ");
-    console.log(tagName);
+    this.props.addTag(this.props.todoItem.id, tagName);
   }
 
   render() {
@@ -29,15 +29,18 @@ class TodoItem extends Component {
         style={{ textDecoration: done ? "line-through" : "none" }}
       >
         <Row>
-          <Col span={16}>
+          <Col span={12}>
             <span onClick={this.toggleDone}>{text}</span>
           </Col>
-          <Col span={4}>
+          <Col span={6}>
+Tags go here
+          </Col>
+          <Col span={3}>
             <Button type="primary" onClick={this.handleAddTag}>
               + Tag
             </Button>
           </Col>
-          <Col span={4}>
+          <Col span={3}>
             <Button danger type="primary" onClick={this.handleDeleteClick}>
               X
             </Button>
