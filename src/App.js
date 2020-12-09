@@ -1,7 +1,6 @@
 import './App.css';
 import TodoList from './component/TodoList';
-import DoneList from './component/DoneList';
-import { BrowserRouter, Link, NavLink, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import DoneListContainer from './container/DoneListContainer';
 
 function App() {
@@ -12,6 +11,9 @@ function App() {
           <ul>
             <li>
               <Link to="/done">go to done page</Link>
+            </li>
+            <li>
+              <Link to="/">go to todo page</Link>
             </li>
           </ul>
           <Switch>
