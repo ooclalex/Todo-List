@@ -34,7 +34,7 @@ class TodoGenerator extends Component {
             <Input
               value={this.state.text}
               onChange={this.handleChange}
-              placeholder="input a new todo here..."
+              placeholder="Input a new todo here..."
             />
           </Col>
           <Col span={4}>

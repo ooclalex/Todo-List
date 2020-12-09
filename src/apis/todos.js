@@ -15,4 +15,8 @@ const deleteTodo = (id) => {
 const updateTodo = (id, item) => {
     return api.put(`/todos/${id}`, {...item, done: !item.done});
 }
-export {getTodoList, createNewTodo, deleteTodo, updateTodo};
+
+const updateTodoAddTag = (id, item, newtag) => {
+    return api.put(`/todos/${id}`, {...item, tag: [...item.tag, newtag]});
+}
+export {getTodoList, createNewTodo, deleteTodo, updateTodo, updateTodoAddTag};
