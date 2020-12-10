@@ -4,6 +4,7 @@ import { deleteTodo, updateTodo, updateTodoAddTag } from "../apis/todos";
 import { Button, Row, Col, Tag } from "antd";
 
 class TodoItem extends Component {
+  // TODO css and jsx of same component under a folder
   toggleDone = () => {
     updateTodo(this.props.todoItem.id, this.props.todoItem).then(() => {
       this.props.updateTodoItem(this.props.todoItem.id);
@@ -17,14 +18,14 @@ class TodoItem extends Component {
   };
 
   handleAddTag = () => {
-    const tagName = prompt("Please enter the tag: ");
-    if (tagName !== "") {
+    const inputTag = prompt("Please enter the tag: ");
+    if (inputTag !== "") {
       updateTodoAddTag(
         this.props.todoItem.id,
         this.props.todoItem,
-        tagName
+        inputTag
       ).then(() => {
-        this.props.addTag(this.props.todoItem.id, tagName);
+        this.props.addTag(this.props.todoItem.id, inputTag);
       });
     }
   };

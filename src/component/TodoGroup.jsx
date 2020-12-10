@@ -1,17 +1,21 @@
 import React, { Component } from "react";
 import TodoItemContainer from "../container/TodoItemContainer";
-import {getTodoList} from "../apis/todos";
+import { getTodoList } from "../apis/todos";
 import { List } from "antd";
 
 class TodoGroup extends Component {
   componentDidMount() {
     getTodoList().then((response) => {
       this.props.initTodos(response.data);
-    })
+    });
   }
 
   renderListItem(todoItem) {
-    return <List.Item key={todoItem.id}><TodoItemContainer todoItem={todoItem}  /></List.Item>
+    return (
+      <List.Item key={todoItem.id}>
+        <TodoItemContainer todoItem={todoItem} />
+      </List.Item>
+    );
   }
 
   render() {

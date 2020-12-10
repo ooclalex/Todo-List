@@ -23,9 +23,6 @@ class DoneList extends Component {
     return (
       <div>
         <Card bordered={false} title="DoneList" className="todo-list-card">
-          {/* {doneList.map((doneItem) => (
-                    <li><span>{doneItem.text}</span></li>
-                ))} */}
           <List dataSource={doneList} renderItem={this.renderListItem} />
         </Card>
       </div>
