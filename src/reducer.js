@@ -13,7 +13,7 @@ const todoItemList = (state = [], action) => {
   switch (action.type) {
     case ADD_TODO_ITEM:
       return [...state, action.payload];
-    case UPDATE_TODO_ITEM: 
+    case UPDATE_TODO_ITEM:
       return state.map((todo) => {
         if (todo.id === action.payload) {
           return {
@@ -22,7 +22,7 @@ const todoItemList = (state = [], action) => {
           };
         }
         return todo;
-    });
+      });
     case DELETE_TODO_ITEM:
       return state.filter((item) => item.id !== action.payload);
     case INIT_TODOS:
@@ -43,17 +43,17 @@ const todoItemList = (state = [], action) => {
 };
 
 const tagItemList = (state = [], action) => {
-  switch(action.type) {
+  switch (action.type) {
     case ADD_TAG_ITEM:
       return [...state, action.payload];
-      case INIT_TAGS:
-        return action.payload;
+    case INIT_TAGS:
+      return action.payload;
     default:
       return state;
   }
-}
+};
 
 export default combineReducers({
   todoItemList,
-  tagItemList
+  tagItemList,
 });
