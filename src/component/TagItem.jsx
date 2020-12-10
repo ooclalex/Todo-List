@@ -5,7 +5,7 @@ class Label extends Component {
     render() {
         return (
             <div>
-                <Tag color={this.props.color}>{this.props.content}</Tag>
+                <Tag color={this.props.tagItem.color}>{this.props.tagItem.content}</Tag>
             </div>
         );
     }

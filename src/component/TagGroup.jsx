@@ -1,23 +1,31 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import TagItemContainer from "../container/TagItemContainer";
 import { List } from "antd";
+import { getTagList } from "../apis/todos";
 
 class TagGroup extends Component {
-    renderListItem(todoItem) {
-        return (
-          <List.Item key={todoItem.id}>
-            <TagItemContainer todoItem={todoItem} />
-          </List.Item>
-        );
-      }
-    render() {
-        const { tagItemList } = this.props;
-        return (
-            <div>
-                <List dataSource={tagItemList} renderItem={this.renderListItem} />
-            </div>
-        );
-    }
+  componentDidMount() {
+    getTagList().then((response) => {
+      this.props.initTags(response.data);
+    });
+  }
+
+  renderListItem(tagItem) {
+    return (
+      <List.Item key={tagItem.id}>
+        <TagItemContainer tagItem={tagItem} />
+      </List.Item>
+    );
+  }
+  
+  render() {
+    const { tagItemList } = this.props;
+    return (
+      <div>
+        <List dataSource={tagItemList} renderItem={this.renderListItem} />
+      </div>
+    );
+  }
 }
 
 export default TagGroup;

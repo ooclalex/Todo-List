@@ -25,4 +25,8 @@ const createNewTag = (content, color) => {
     return api.post('/tag', {content: content, color: color});
 }
 
-export {getTodoList, createNewTodo, deleteTodo, updateTodo, updateTodoAddTag, createNewTag};
+const getTagList = () => {
+    return api.get('/tag');
+}
+
+export {getTodoList, createNewTodo, deleteTodo, updateTodo, updateTodoAddTag, createNewTag, getTagList};

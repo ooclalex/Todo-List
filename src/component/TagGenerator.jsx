@@ -18,7 +18,7 @@ class TagGenerator extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const color = prompt("Choose a color: ");
+    const color = prompt("Enter a color: ");
     if (this.state.text !== "") {
       createNewTag(this.state.text, color).then((response) => {
         this.props.addTagItem(response.data);

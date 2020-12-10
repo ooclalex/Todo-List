@@ -25,7 +25,7 @@ class TodoItem extends Component {
         this.props.todoItem.id,
         this.props.todoItem,
         inputTag,
-        "red"
+        inputColor
       ).then(() => {
         this.props.addTag(this.props.todoItem.id, inputTag);
       });
