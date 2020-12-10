@@ -1,4 +1,4 @@
-import "./TodoList.css";
+import "../css/TodoList.css";
 import React, { Component } from "react";
 import TodoGeneratorContainer from "../container/TodoGeneratorContainer";
 import TodoGroupContainer from "../container/TodoGroupContainer";

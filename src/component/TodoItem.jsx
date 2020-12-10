@@ -1,10 +1,9 @@
-import "./TodoItem.css";
+import "../css/TodoItem.css";
 import React, { Component } from "react";
 import { deleteTodo, updateTodo, updateTodoAddTag } from "../apis/todos";
 import { Button, Row, Col, Tag } from "antd";
 
 class TodoItem extends Component {
-  // TODO css and jsx of same component under a folder
   toggleDone = () => {
     updateTodo(this.props.todoItem.id, this.props.todoItem).then(() => {
       this.props.updateTodoItem(this.props.todoItem.id);
