@@ -5,6 +5,7 @@ import { getTagList } from "../apis/todos";
 
 class TagGroup extends Component {
   componentDidMount() {
+    console.log("hello");
     getTagList().then((response) => {
       this.props.initTags(response.data);
     });

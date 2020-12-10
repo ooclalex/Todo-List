@@ -2,7 +2,6 @@ import "../css/TodoItem.css";
 import React, { Component } from "react";
 import { deleteTodo, updateTodo, updateTodoAddTag } from "../apis/todos";
 import { Button, Row, Col, Tag } from "antd";
-import Label from "./TagItem";
 
 class TodoItem extends Component {
   toggleDone = () => {
@@ -47,7 +46,6 @@ class TodoItem extends Component {
             {/* {this.props.todoItem.tag.map((tagItem) => (
               <Tag>{tagItem}</Tag>
             ))} */}
-            <Label content={"abc"} color={"red"}></Label>
           </Col>
           <Col span={3}>
             <Button type="primary" onClick={this.handleAddTag}>
