@@ -4,6 +4,7 @@ import {
   UPDATE_TODO_ITEM,
   INIT_TODOS,
   ADD_TAG,
+  ADD_TAG_ITEM,
 } from "./actionTypes";
 
 export const addTodoItem = (item) => ({ type: ADD_TODO_ITEM, payload: item });
@@ -17,7 +18,12 @@ export const initTodos = (todos) => ({
   payload: todos,
 });
 
-export const addTag = (id, tag) => ({
+export const addTag = (id, label) => ({
   type: ADD_TAG,
-  payload: { id: id, tag: tag },
+  payload: { id, label: label },
 });
+
+export const addTagItem = (content, color) => ({
+  type: ADD_TAG_ITEM,
+  payload: {content: content, color: color}
+})

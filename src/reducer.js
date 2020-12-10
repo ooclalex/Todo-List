@@ -5,6 +5,7 @@ import {
   DELETE_TODO_ITEM,
   INIT_TODOS,
   UPDATE_TODO_ITEM,
+  ADD_TAG_ITEM
 } from "./actionTypes";
 
 const todoItemList = (state = [], action) => {
@@ -40,6 +41,16 @@ const todoItemList = (state = [], action) => {
   }
 };
 
+const tagItemList = (state = [], action) => {
+  switch(action.type) {
+    case ADD_TAG_ITEM:
+      return [...state, action.payload];
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
   todoItemList,
+  tagItemList
 });

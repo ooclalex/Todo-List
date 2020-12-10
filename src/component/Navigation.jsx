@@ -15,6 +15,9 @@ class Navigation extends Component {
           <Menu.Item key="/done" class="div-menu-item">
             <Link to="/done">go to done page</Link>
           </Menu.Item>
+          <Menu.Item key="/tag">
+            <Link to="/tag">go to tag page</Link>
+          </Menu.Item>
           <Menu.Item key="/">
             <Link to="/">go to todo page</Link>
           </Menu.Item>

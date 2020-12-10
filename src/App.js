@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import DoneListContainer from "./container/DoneListContainer";
 import NotFound from "./component/NotFound";
 import Navigation from "./component/Navigation";
+import TagList from "./component/TagList";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Navigation />
           <Switch>
             <Route exact path="/done" component={DoneListContainer}></Route>
+            <Route exact path="/tag" component={TagList}></Route>
             <Route exact path="/" component={TodoList}></Route>
             <Route component={NotFound}></Route>
           </Switch>
